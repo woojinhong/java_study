@@ -1,3 +1,7 @@
+# IntelliJ IDEA 관련 파일들 무시
+.idea/
+*.iml
+*.iws
 # Default ignored files
 /shelf/
 /workspace.xml
