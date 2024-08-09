@@ -1,25 +1,5 @@
 package 변수;
 /*
-1. Types of Variables
-
-Primitive Data Types:
-byte: Stores small integers from -128 to 127 (8-bit signed).
-short: Stores integers from -32,768 to 32,767 (16-bit signed).
-int: Stores integers from -2^31 to 2^31-1 (32-bit signed). This is the most commonly used integer type.
-long: Stores large integers from -2^63 to 2^63-1 (64-bit signed).
-float: Stores single-precision 32-bit floating point numbers (e.g., 3.14f). Used for saving memory in large arrays of floating-point numbers.
-double: Stores double-precision 64-bit floating point numbers (e.g., 3.141592653589793). This is the default choice for decimal values.
-char: Stores a single 16-bit Unicode character (e.g., 'A', '3').
-boolean: Stores true or false values, typically used for conditional checks.
-
-Reference Data Types:
-String: A class that represents a sequence of characters, like "Hello, World!". Strings are immutable, meaning once created, their values cannot be changed.
-Arrays: Stores multiple values of the same type in a single variable (e.g., int[] numbers = {1, 2, 3};).
-Classes and Objects: Variables can be instances of classes, which can store complex data and provide methods for operations on that data.
-*/
-
-
-/*
 1. 변수의 종류
 
 기본 데이터 타입:
@@ -41,7 +21,7 @@ public class variable_types {
     public static void main(String[] args) {
 
         /**
-         * 기본 데이터 타입
+         * 기본 데이터 타입 - 바이트 (Byte) 8비트
          */
 
         // byte: -128 ~ 127
@@ -50,11 +30,19 @@ public class variable_types {
         System.out.println("byte 최소값: " + minByte);
         System.out.println("byte 최대값: " + maxByte);
 
+        /**
+         * 기본 데이터 타입 - 쇼트 (Short) 16비트
+         */
+
         // short: -32,768 ~ 32,767
         short minShort = Short.MIN_VALUE;
         short maxShort = Short.MAX_VALUE;
         System.out.println("short 최소값: " + minShort);
         System.out.println("short 최대값: " + maxShort);
+
+        /**
+         * 기본 데이터 타입 - 정수 (int) 32비트
+         */
 
         // int: -2^31 ~ 2^31-1
         int minInt = Integer.MIN_VALUE;
@@ -62,11 +50,19 @@ public class variable_types {
         System.out.println("int 최소값: " + minInt);
         System.out.println("int 최대값: " + maxInt);
 
+        /**
+         * 기본 데이터 타입 - 롱 (Long) 64비트
+         */
+
         // long: -2^63 ~ 2^63-1
         long minLong = Long.MIN_VALUE;
         long maxLong = Long.MAX_VALUE;
         System.out.println("long 최소값: " + minLong);
         System.out.println("long 최대값: " + maxLong);
+
+        /**
+         * 기본 데이터 타입 - 플로트 (float) 32비트
+         */
 
         // float: 1.4E-45 ~ 3.4028235E38 (가장 작은/가장 큰 양의 값)
         float minFloat = Float.MIN_VALUE;
@@ -74,17 +70,29 @@ public class variable_types {
         System.out.println("float 최소값: " + minFloat);
         System.out.println("float 최대값: " + maxFloat);
 
+        /**
+         * 기본 데이터 타입 - 더블 (Double) 64비트
+         */
+
         // double: 4.9E-324 ~ 1.7976931348623157E308 (가장 작은/가장 큰 양의 값)
         double minDouble = Double.MIN_VALUE;
         double maxDouble = Double.MAX_VALUE;
         System.out.println("double 최소값: " + minDouble);
         System.out.println("double 최대값: " + maxDouble);
+        
+        /**
+         * 기본 데이터 타입 - 캐릭터 (Char) 단일 16비트
+         */
 
         // char: 0 ~ 65535 (유니코드 값)
         char minChar = Character.MIN_VALUE;
         char maxChar = Character.MAX_VALUE;
         System.out.println("char 최소값: " + (int)minChar);
         System.out.println("char 최대값: " + (int)maxChar);
+
+        /**
+         * 기본 데이터 타입 - 논리형 (Boolean) 명시된 크기는 없지만, 내부적으로 JVM에 따라 한 비트 또는 한 바이트로 구현될 수 있음
+         */
 
         // boolean: true 또는 false (최소/최대 값의 개념은 없으므로 예시로 true/false 값을 출력)
         boolean boolTrue = true;
@@ -94,22 +102,36 @@ public class variable_types {
 
 
         /**
-         * 참조 데이터 타입
+         * 참조 데이터 타입 - 문자열 (String)
          */
 
         //String은 불변(immutable)하기 때문에 원본 문자열을 변경할 수 없습니다.
-        //불변(immutable)이란 String은 객체로 다루어지기 때문에 한번 만들어지면 문자열 자체가 Heap 메모리에서 제거되기 전까지 남아있다는 것 
-        // (자세한 내용은 java_study/java_cs/메모리영역.md)에서 확인
-        ///자바의역사.md)
-     
+        //불변이란 String Pool object에 메모리가 제거되지 않는 한 문자열 리터럴(String Literal) 그 자체의 변경이 불가 하다는 것 입니다.
+        //자세한 내용은 "java_study/java_cs/변수와메모리.md" 에서 확인
+
+        //immutable 변수는 스택(Stack) 메모리에 저장되고, String Pool에 있는 "immutable" 문자열 객체를 참조합니다.
         String immutable = "immutable";
-        System.out.println(immutable);
-        String changeable = immutable;
-        immutable = null;
+
+        // 이제 immutable 변수는 "immutable" 문자열이 아닌 "changeable" 문자열 리터럴을 참조하게 됩니다.
+        immutable = "changeable";
+
 
         System.out.println("immutable = " + immutable);
-        System.out.println("changeable = " + changeable);
 
+
+        /**
+         * 참조 데이터 타입 - 배열 (Array)
+         */
+
+        // 배열은 가변(mutable)하기 때문에 배열의 속성은 변경 가능합니다.
+        // int[] 배열은 동일한 타입(int)의 여러 값을 저장할 수 있는 컨테이너 역할을 합니다.
+        // 배열은 힙(Heap) 메모리에 저장되며, 스택(Stack) 메모리의 변수는 이 배열을 참조합니다.
+
+        int[] numbers = {1, 2, 3};  // numbers 변수는 스택에 저장되고, 실제 배열 객체는 힙에 저장됩니다.
+        numbers[0] = 10;  // 배열의 첫 번째 요소를 10으로 변경. 배열 자체는 가변.
+
+        // 배열 객체는 가변(mutable)하기 때문에, 배열 요소의 값을 변경할 수 있습니다.
+        System.out.println("첫 번째 요소: " + numbers[0]);  // 10이 출력됩니다.
 
     }
 }
