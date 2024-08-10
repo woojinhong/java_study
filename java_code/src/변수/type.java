@@ -17,7 +17,7 @@ String: 문자열을 나타내는 클래스입니다. "Hello, World!"와 같은 
 배열: 동일한 타입의 여러 값을 하나의 변수에 저장합니다 (예: int[] numbers = {1, 2, 3};).
 클래스와 객체: 변수는 클래스의 인스턴스일 수 있으며, 복잡한 데이터를 저장하고 그 데이터에 대한 작업을 수행하는 메서드를 제공합니다.
  */
-public class variable_types {
+public class type {
     public static void main(String[] args) {
 
         /**
@@ -79,7 +79,7 @@ public class variable_types {
         double maxDouble = Double.MAX_VALUE;
         System.out.println("double 최소값: " + minDouble);
         System.out.println("double 최대값: " + maxDouble);
-        
+
         /**
          * 기본 데이터 타입 - 캐릭터 (Char) 단일 16비트
          */
@@ -117,6 +117,7 @@ public class variable_types {
 
 
         System.out.println("immutable = " + immutable);
+
 
 
         /**
