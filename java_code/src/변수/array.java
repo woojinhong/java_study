@@ -1,19 +1,65 @@
 package 변수;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class array{
     public static void main(String[] args) {
-        // 크기가 5인 고정된 정수형 배열 생성
-        // int = 4 byte * 5 = 20 byte
-        int[] numbers = new int[5];
+        // 4byte = stack
+        int sum = 0;
+        // 4byte = stack
+        float avg = 0f;
 
-        // 배열에 값 할당
-        numbers[0] = 10;
-        numbers[1] = 20;
-        numbers[2] = 30;
-        numbers[3] = 40;
-        numbers[4] = 50;
+        // score = stack & 20byte = heap
+        int[] score = new int[]{10,20,30,40,50};
 
-        // 배열의 크기 출력
-        System.out.println("Array length: " + numbers.length);
+        for (int i= 0 ; i<score.length; i++ ){
+            sum+=score[i];
+        }
+
+        avg = sum/(float)score.length;
+
+        System.out.println(sum);
+        System.out.println(avg);
+
+
+        size i = new size();
+        i.loop();
+
+        lotto a = new lotto();
+        a.random();
+    }
+}
+
+class size{
+    int[] score = new int[]{10,20,30,40,50};
+
+    int max = score[0];
+    int min = score[0];
+
+    public void loop() {
+        for (int i = 1; i < score.length; i++) {
+            if(score[i]< max){
+                min = score[i];
+            }
+            max = score[i];
+        }
+
+        System.out.println(max);
+        System.out.println(min);
+    }
+}
+
+class lotto {
+    int[] lotto = {0,1,2,3,4,5,6,7,8,9};
+
+    public void random(){
+        for (int i = 0 ; i < 100; i++){
+            int ran = (int)(Math.random()*10);
+            int tmp = lotto[0];
+            lotto[0] = lotto[ran];
+            lotto[ran] = tmp;
+        }
+        System.out.println("Arrays.toString(lotto) = " + Arrays.toString(lotto));
     }
 }
