@@ -1,9 +1,8 @@
 package 변수;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class array{
+public class Array{
     public static void main(String[] args) {
         // 4byte = stack
         int sum = 0;
